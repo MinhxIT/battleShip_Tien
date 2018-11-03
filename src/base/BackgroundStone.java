@@ -29,8 +29,8 @@ public class BackgroundStone extends GameObject {
         } else {
             if (this.position.y > -Settings.SCREEN_HEIGHT -200) {
                 isEnd = true;
-                if (KeyEventPress.isAnyKeyPress){
-                    SceneManager.signNewScene(new SceneStage1());
+                if (KeyEventPress.isEnterPress){
+                    SceneManager.signNewScene(new SceneStage2());
                 }
             }
 

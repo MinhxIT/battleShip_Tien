@@ -65,6 +65,9 @@ public class GameWindow extends JFrame {
                 if(e.getKeyCode() == KeyEvent.VK_SPACE) {
                     KeyEventPress.isSpacePress = true;
                 }
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    KeyEventPress.isEnterPress = true;
+                }
             }
 
             @Override
@@ -85,6 +88,9 @@ public class GameWindow extends JFrame {
                 }
                 if(e.getKeyCode() == KeyEvent.VK_SPACE) {
                     KeyEventPress.isSpacePress = false;
+                }
+                if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    KeyEventPress.isEnterPress = false;
                 }
             }
         });

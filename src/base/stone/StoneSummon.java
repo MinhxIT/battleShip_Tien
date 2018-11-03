@@ -51,6 +51,7 @@ public class StoneSummon extends GameObject {
 
     @Override
     public void run() {
+
         if (!isEnd) {
             this.action.run(this);
         }

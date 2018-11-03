@@ -67,7 +67,7 @@ public class Enemy extends GameObject implements Physics {
     public void run() {
         this.actionFire.run(this);
         this.actionMove.run(this);
-        if (this.position.y>600){
+        if (this.position.y>700){
             this.destroy();
             return;
         }

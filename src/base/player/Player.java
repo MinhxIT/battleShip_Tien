@@ -10,6 +10,9 @@ import base.scene.SceneManager;
 import base.scene.SceneStage1;
 import base.scene.SceneStage2;
 import base.scene.gameoverscene.GameOverScene;
+import base.scene.gameoverscene.GameOverScene1;
+import base.scene.gameoverscene.GameOverScene2;
+import base.scene.welcomescene.Level1Scene;
 import base.scene.welcomescene.WelcomeScene;
 import base.stone.StoneType1;
 import tklibs.SpriteUtils;
@@ -77,9 +80,10 @@ public class Player extends GameObject implements Physics {
         }
 
         StoneType1 type1 = GameObject.intersect(StoneType1.class,this);
-        Background background;
         if (type1!=null){
             this.destroy();
+            //KeyEventPress.isAnyKeyPress = true;
+                SceneManager.signNewScene(new GameOverScene2());
         }
         this.position.addThis(this.velocity);
     }
@@ -119,8 +123,7 @@ public class Player extends GameObject implements Physics {
         this.hp -= damage;
         if(this.hp <= 0) {
             this.destroy();
-            hp = 0;
-            SceneManager.signNewScene(new GameOverScene());
+            SceneManager.signNewScene(new GameOverScene1());
         }
     }
 

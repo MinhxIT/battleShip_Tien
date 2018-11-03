@@ -3,7 +3,7 @@ package base.scene.gameoverscene;
 import base.GameObject;
 import base.scene.Scene;
 
-public class GameOverScene extends Scene {
+public class GameOverScene1 extends Scene {
     @Override
     public void destroy() {
         GameObject.clearAll();
