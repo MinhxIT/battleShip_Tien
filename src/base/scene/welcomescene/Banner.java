@@ -14,14 +14,14 @@ import java.awt.image.BufferedImage;
 public class Banner extends GameObject {
     public Banner(){
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/images/wellcome.jpg");
+        BufferedImage image = SpriteUtils.loadImage("assets/images/background/WelcomeScene.png");
         this.renderer = new SingleImageRenderer(image);
         this.position.set(Settings.SCREEN_WIDHT/2, Settings.SCREEN_HEIGHT/2);
     }
     @Override
     public void run() {
         if (KeyEventPress.isAnyKeyPress){
-            SceneManager.signNewScene(new SceneStage1());
+            SceneManager.signNewScene(new SceneStage2());
         }
     }
 }

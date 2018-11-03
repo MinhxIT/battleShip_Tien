@@ -6,10 +6,10 @@ import base.physics.BoxCollider;
 import base.physics.Physics;
 
 public class Stone extends GameObject implements Physics {
-    public Stone(){
-        this.position = new Vector2D(200,200);
+    public Stone() {
+        this.position = new Vector2D(200, 200);
         //this.setPosition();
-        this.collider = new BoxCollider(100, 100);
+        this.collider = new BoxCollider(50, 50);
     }
 
     @Override
@@ -19,7 +19,11 @@ public class Stone extends GameObject implements Physics {
 
     @Override
     public void run() {
-            this.position.y += 3/*speed*/;
+        this.position.y += 3/*speed*/;
+        if (this.position.y > 700) {
+            this.destroy();
+            return;
+        }
     }
 
     @Override

@@ -94,8 +94,8 @@ public class GameObject {
 
     public GameObject() {
         this.isActive = true;
-        //this.anchor = new Vector2D(0.5f, 0.5f);
-        this.anchor = new Vector2D(0, 0);
+        this.anchor = new Vector2D(0.5f, 0.5f);
+       // this.anchor = new Vector2D(0 , 0);
 
         this.position = new Vector2D(0, 0);
     }

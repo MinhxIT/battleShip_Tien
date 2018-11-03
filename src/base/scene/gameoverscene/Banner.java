@@ -11,7 +11,7 @@ import tklibs.SpriteUtils;
 public class Banner extends GameObject {
     public Banner(){
         super();
-        this.renderer = new SingleImageRenderer(SpriteUtils.loadImage("assets/images/scenes/game-over-background.jpg"));
+        this.renderer = new SingleImageRenderer(SpriteUtils.loadImage("assets/images/background/GameOverScene.png"));
         this.position.set(Settings.SCREEN_WIDHT/2, Settings.SCREEN_HEIGHT/2);
 
     }

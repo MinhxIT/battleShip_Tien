@@ -17,19 +17,19 @@ public class BoxCollider extends GameObject{
     }
 
     public int top(GameObject master) {
-        return (int) master.position.y;
+        return (int) (master.position.y - master.anchor.x * this.height);
     }
 
     public int bot(GameObject master) {
-        return (int) (master.position.y + this.height);
+        return (int) this.top(master) + height;
     }
 
     public int left(GameObject master) {
-        return (int) master.position.x;
+        return (int) (master.position.x - master.anchor.y * this.width);
     }
 
     public int right(GameObject master) {
-        return (int) (master.position.x + this.width);
+        return (int) (this.left(master) + this.width);
     }
 
     public boolean intersect(Physics other, GameObject master) {

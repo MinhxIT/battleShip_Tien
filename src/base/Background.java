@@ -24,8 +24,10 @@ public class Background extends GameObject {
     public void run() {
         if (this.position.y >= 0) {
             //isEnd = true;
-            if (KeyEventPress.isAnyKeyPress) {
-                SceneManager.signNewScene(new SceneStage2());
+            if (this.position.y==0){
+                if (KeyEventPress.isAnyKeyPress) {
+                    SceneManager.signNewScene(new SceneStage2());
+                }
             }
             return;
         } else {
