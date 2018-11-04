@@ -28,7 +28,6 @@ public class EnemyBoss extends GameObject implements Physics {
     FrameCounter fireCounter;
     FrameCounter moveCounter;
     Vector2D velocity;
-
     public EnemyBoss() {
         super();
         BufferedImage image = SpriteUtils.loadImage("assets/images/boss/1.png");
