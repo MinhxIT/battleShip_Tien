@@ -8,19 +8,14 @@ import base.action.ActionRepeat;
 import base.action.ActionSequence;
 import base.action.ActionWait;
 import base.counter.FrameCounter;
-import base.enemy.EnemyBullet;
 import base.physics.BoxCollider;
 import base.physics.Physics;
-import base.renderer.AnimationRenderer;
 import base.renderer.SingleImageRenderer;
 import base.scene.SceneManager;
-import base.scene.gameoverscene.GameOverScene;
-import base.scene.gameoverscene.GameOverScene3;
 import base.scene.gamewinscene.GameWinScene;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class EnemyBoss extends GameObject implements Physics {
     BoxCollider collider;

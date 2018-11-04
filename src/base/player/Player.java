@@ -6,12 +6,9 @@ import base.event.KeyEventPress;
 import base.event.MouseManager;
 import base.physics.BoxCollider;
 import base.physics.Physics;
-import base.scene.SceneManager;
-import base.scene.gameoverscene.GameOverScene;
-import base.scene.gameoverscene.GameOverScene1;
-import base.scene.gameoverscene.GameOverScene2;
-import base.scene.gameoverscene.GameOverScene3;
 import base.stone.StoneType1;
+import javafx.scene.media.MediaPlayer;
+import tklibs.AudioUtils;
 
 public class Player extends GameObject implements Physics {
     FrameCounter fireCounter;
@@ -76,7 +73,6 @@ public class Player extends GameObject implements Physics {
         if (type1!=null){
             this.destroy();
             //KeyEventPress.isAnyKeyPress = true;
-                SceneManager.signNewScene(new GameOverScene2());
         }
         this.position.addThis(this.velocity);
     }
@@ -88,12 +84,12 @@ public class Player extends GameObject implements Physics {
         this.fireCounter.reset();
     }
     public void fire(Vector2D velocity) {
+        AudioUtils.initialize();
+        MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/shot.wav");
+        mediaPlayer.play();
         PlayerBulletType1 bullet = GameObject.recycle(PlayerBulletType1.class);
-
         bullet.velocity.set(velocity);
-
         bullet.position.set(this.position.x, this.position.y);
-
         this.fireCounter.reset();
     }
 
@@ -115,15 +111,20 @@ public class Player extends GameObject implements Physics {
         this.hp -= damage;
         if(this.hp <= 0) {
             this.destroy();
-            SceneManager.signNewScene(new GameOverScene2());
         }
     }
 
     @Override
     public void destroy() {
         super.destroy();
+
         Explosion explosion = GameObject.recycle(Explosion.class);
         explosion.position.set(this.position);
+        AudioUtils.initialize();
+        MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/enemy-player-explosion-big.wav");
+        mediaPlayer.play();
+        DeathPlayer deathPlayer = GameObject.recycle(DeathPlayer.class);
+        deathPlayer.position.set(this.position);
     }
 
     @Override
@@ -135,7 +136,6 @@ public class Player extends GameObject implements Physics {
         this.hp -= damage;
         if(this.hp <= 0) {
             this.destroy();
-            SceneManager.signNewScene(new GameOverScene());
         }
 
     }
@@ -144,7 +144,6 @@ public class Player extends GameObject implements Physics {
         this.hp -= damage;
         if(this.hp <= 0) {
             this.destroy();
-            SceneManager.signNewScene(new GameOverScene3());
         }
     }
 }

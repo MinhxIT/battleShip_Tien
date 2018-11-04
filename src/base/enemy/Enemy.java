@@ -10,6 +10,8 @@ import base.physics.BoxCollider;
 import base.physics.Physics;
 import base.player.Player;
 import base.renderer.AnimationRenderer;
+import javafx.scene.media.MediaPlayer;
+import tklibs.AudioUtils;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
@@ -76,6 +78,9 @@ public class Enemy extends GameObject implements Physics {
     public void fire() {
         EnemyBullet bullet = GameObject.recycle(EnemyBullet.class);
         bullet.position.set(this.position.x + 5, this.position.y + 20);
+        AudioUtils.initialize();
+        MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/shot.wav");
+        mediaPlayer.play();
     }
 
     public void takeDamage(int damage) {

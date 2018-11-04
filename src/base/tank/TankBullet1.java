@@ -16,7 +16,7 @@ public class TankBullet1 extends GameObject implements Physics {
     public TankBullet1(){
         this.renderer=new SingleImageRenderer("assets/images/enemy-side/cannon/0.png");
         this.position=new Vector2D(Settings.TANK_POSITION_X+5, Settings.TANK_POSITION_Y+5);
-        this.velocity=new Vector2D(4,4);
+        this.velocity=new Vector2D(3,4);
         this.damage=1;
         this.collider=new BoxCollider(15,15);
     }

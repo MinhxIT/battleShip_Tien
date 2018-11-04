@@ -2,7 +2,6 @@ package base.scene.gamewinscene;
 
 import base.GameObject;
 import base.scene.Scene;
-import base.scene.gameoverscene.BannerScene3;
 
 public class GameWinScene extends Scene {
     @Override

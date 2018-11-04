@@ -18,7 +18,7 @@ public class TankBullet2 extends GameObject implements Physics {
     public TankBullet2() {
         this.renderer = new SingleImageRenderer("assets/images/enemy-side/cannon/0.png");
         this.position = new Vector2D(Settings.TANK_POSITION_X + 5, Settings.TANK_POSITION_Y + 5);
-        this.velocity = new Vector2D(-4, 0);
+        this.velocity = new Vector2D(-10, 0);
         this.damage = 4;
         this.collider = new BoxCollider(15, 15);
     }
@@ -32,6 +32,7 @@ public class TankBullet2 extends GameObject implements Physics {
             player.takeDamageByTank(this.damage);
             this.destroy();
         }
+
     }
     @Override
     public void destroy() {

@@ -61,7 +61,7 @@ public class PlayerBullet extends GameObject implements Physics {
             return;
         }
         
-        if(this.position.y < 0) {
+        if(this.position.y < -50) {
             this.destroy();
             return;
         }

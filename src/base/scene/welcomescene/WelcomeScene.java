@@ -13,11 +13,11 @@ public class WelcomeScene extends Scene {
 
     @Override
     public void init() {
-
-        GameObject banner = GameObject.recycle(Banner.class);
         AudioUtils.initialize();
         MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/background.mp3");
         mediaPlayer.play();
+        GameObject banner = GameObject.recycle(Banner.class);
+
     }
 
     @Override

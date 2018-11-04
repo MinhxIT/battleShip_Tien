@@ -24,6 +24,7 @@ public class SceneStage2 extends Scene {
     }
     @Override
     public void run() {
+        super.run();
         stoneSummon.isEnd = backgroundStone.isEnd;
     }
 }

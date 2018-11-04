@@ -16,6 +16,5 @@ public class Level2Scene extends Scene {
 
     @Override
     public void run() {
-
     }
 }

@@ -2,6 +2,8 @@ package base.scene.gameoverscene;
 
 import base.GameObject;
 import base.scene.Scene;
+import javafx.scene.media.MediaPlayer;
+import tklibs.AudioUtils;
 
 public class GameOverScene extends Scene {
     @Override
@@ -16,6 +18,5 @@ public class GameOverScene extends Scene {
 
     @Override
     public void run() {
-
     }
 }

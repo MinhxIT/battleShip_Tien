@@ -2,6 +2,7 @@ package base;
 
 import base.physics.BoxCollider;
 import base.physics.Physics;
+import base.player.Player;
 import base.renderer.Renderer;
 import base.scene.SceneManager;
 
@@ -15,6 +16,7 @@ public class GameObject {
     public static BufferedImage backBuffer = new BufferedImage(Settings.SCREEN_WIDHT
             , Settings.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB);
     public static Graphics backBufferGraphics = backBuffer.createGraphics();
+    public static boolean playerIsDead = false;
 
     public static <E extends GameObject> E create(Class<E> childClass) {
         try {
@@ -37,6 +39,7 @@ public class GameObject {
     }
 
     public static void clearAll() {
+        playerIsDead = false;
         gameObjects.clear();
         newGameObjects.clear();
     }
@@ -58,8 +61,13 @@ public class GameObject {
 
     public static void runAll() {
         for(GameObject go : gameObjects) {
-            if(go.isActive) {
+            if(go.isActive && !playerIsDead) {
                 go.run();
+            }
+            if (go instanceof Player) {
+                if (!go.isActive) {
+                    playerIsDead = true;
+                }
             }
         }
 
@@ -67,6 +75,8 @@ public class GameObject {
         newGameObjects.clear();
         SceneManager.changeSceneIfNeeded();
         SceneManager.currentScene.run();
+        System.out.println(SceneManager.currentScene);
+        System.out.println(playerIsDead);
 
     }
 
@@ -120,5 +130,6 @@ public class GameObject {
 
     public void reset() {
         this.isActive = true;
+        playerIsDead = true;
     }
 }

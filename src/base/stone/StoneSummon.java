@@ -45,7 +45,7 @@ public class StoneSummon extends GameObject {
     public void createStone() {
         StoneType1 stoneType1 = GameObject.recycle(StoneType1.class);
         stoneType1.position.set(
-                Settings.START_STONE_POSITION_X - 250 + new Random().nextInt(200),
+                Settings.START_STONE_POSITION_X - 250 + new Random().nextInt(300),
                 -300);
     }
 

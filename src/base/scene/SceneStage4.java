@@ -31,7 +31,7 @@ public class SceneStage4 extends Scene {
 
     @Override
     public void run() {
-
+        super.run();
     }
 }
 
