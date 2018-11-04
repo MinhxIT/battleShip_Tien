@@ -24,8 +24,5 @@ public abstract class Scene {
                 frameCounter.reset();
             }
         }
-
     }
-
-    ;
 }

@@ -34,6 +34,5 @@ public class BackgroundStone extends GameObject {
 
             this.position.y += 5/*speed*/;
         }
-        //System.out.println(isEnd);
     }
 }
