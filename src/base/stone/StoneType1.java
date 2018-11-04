@@ -10,7 +10,7 @@ import java.util.Random;
 public class StoneType1 extends Stone {
     public StoneType1() {
         List<String> listStones = Arrays.asList(
-                "assets/images/stone/0.png",
+                "assets/images/stone/rock6.png",
                 "assets/images/stone/1.png",
                 "assets/images/stone/2.png",
                 "assets/images/stone/3.png",

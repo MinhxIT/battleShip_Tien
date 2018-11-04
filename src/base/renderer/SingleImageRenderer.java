@@ -24,9 +24,9 @@ public class SingleImageRenderer extends Renderer {
         double x = master.position.x - image.getWidth() * master.anchor.x;
         double y = master.position.y - image.getHeight() * master.anchor.y;
         g.drawImage(this.image, (int)x, (int)y, null);
-        if(master instanceof Physics) {
-            BoxCollider box = ((Physics)master).getBoxCollider();
-            g.drawRect(box.left(master), box.top(master), box.width, box.height);
-        }
+//        if(master instanceof Physics) {
+//            BoxCollider box = ((Physics)master).getBoxCollider();
+//            g.drawRect(box.left(master), box.top(master), box.width, box.height);
+//        }
     }
 }

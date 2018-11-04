@@ -11,11 +11,22 @@ public class PlayerBulletType1 extends PlayerBullet {
         super();
         this.renderer = new SingleImageRenderer("assets/images/player-bullets/0.png");
         this.collider = new BoxCollider(15, 15);
-        this.damage = 1;
+        this.damage = 5;
     }
 
     @Override
     public void hitEnemy() {
+        this.destroy();
+    }
+    @Override
+    public void destroy() {
+        super.destroy();
+        Explosion explosion = GameObject.recycle(Explosion.class);
+        explosion.position.set(this.position);
+    }
+
+    @Override
+    public void hitBoss(){
         this.destroy();
     }
 

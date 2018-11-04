@@ -7,18 +7,11 @@ import base.event.MouseManager;
 import base.physics.BoxCollider;
 import base.physics.Physics;
 import base.scene.SceneManager;
-import base.scene.SceneStage1;
-import base.scene.SceneStage2;
 import base.scene.gameoverscene.GameOverScene;
 import base.scene.gameoverscene.GameOverScene1;
 import base.scene.gameoverscene.GameOverScene2;
-import base.scene.welcomescene.Level1Scene;
-import base.scene.welcomescene.WelcomeScene;
+import base.scene.gameoverscene.GameOverScene3;
 import base.stone.StoneType1;
-import tklibs.SpriteUtils;
-
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 
 public class Player extends GameObject implements Physics {
     FrameCounter fireCounter;
@@ -44,16 +37,16 @@ public class Player extends GameObject implements Physics {
         int VX = 0;
         int VY = 0;
         if(KeyEventPress.isUpPress) {
-            VY -= 1;
+            VY -= 3;
         }
         if(KeyEventPress.isDownPress) {
-            VY += 1;
+            VY += 3;
         }
         if(KeyEventPress.isRightPress) {
-            VX += 1;
+            VX += 3;
         }
         if(KeyEventPress.isLeftPress) {
-            VX -= 1;
+            VX -= 3;
         }
         this.move(VX, VY);
         //fire
@@ -95,7 +88,6 @@ public class Player extends GameObject implements Physics {
         this.fireCounter.reset();
     }
     public void fire(Vector2D velocity) {
-
         PlayerBulletType1 bullet = GameObject.recycle(PlayerBulletType1.class);
 
         bullet.velocity.set(velocity);
@@ -123,7 +115,7 @@ public class Player extends GameObject implements Physics {
         this.hp -= damage;
         if(this.hp <= 0) {
             this.destroy();
-            SceneManager.signNewScene(new GameOverScene1());
+            SceneManager.signNewScene(new GameOverScene2());
         }
     }
 
@@ -139,4 +131,20 @@ public class Player extends GameObject implements Physics {
         return this.collider;
     }
 
+    public void takeDamageByTank(int damage) {
+        this.hp -= damage;
+        if(this.hp <= 0) {
+            this.destroy();
+            SceneManager.signNewScene(new GameOverScene());
+        }
+
+    }
+
+    public void takeDamageByBoss(int damage) {
+        this.hp -= damage;
+        if(this.hp <= 0) {
+            this.destroy();
+            SceneManager.signNewScene(new GameOverScene3());
+        }
+    }
 }

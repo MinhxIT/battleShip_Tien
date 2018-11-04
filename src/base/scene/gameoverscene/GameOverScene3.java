@@ -1,17 +1,17 @@
-package base.scene.welcomescene;
+package base.scene.gameoverscene;
 
 import base.GameObject;
 import base.scene.Scene;
 
-public class Level1Scene extends Scene {
+public class GameOverScene3 extends Scene {
     @Override
     public void destroy() {
-       GameObject.clearAll();
+        GameObject.clearAll();
     }
 
     @Override
     public void init() {
-        GameObject bannerlv1 = GameObject.recycle(Bannerlv1.class);
+        GameObject.recycle(BannerScene3.class);
     }
 
     @Override

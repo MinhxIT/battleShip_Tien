@@ -1,24 +1,26 @@
-package base.enemy;
+package base.tank;
 
-import base.*;
+import base.Explosion;
+import base.GameObject;
+import base.Settings;
+import base.Vector2D;
 import base.physics.BoxCollider;
 import base.physics.Physics;
 import base.player.Player;
 import base.renderer.SingleImageRenderer;
-import tklibs.SpriteUtils;
 
-public class EnemyBullet extends GameObject implements Physics {
-
+public class TankBullet1 extends GameObject implements Physics {
+    BoxCollider collider;
     Vector2D velocity;
     int damage;
-
-    public EnemyBullet() {
-        this.renderer = new SingleImageRenderer(SpriteUtils.loadImage("assets/images/enemy-bullets/0.png"));
-        //this.position = new Vector2D(0, 0);
-        this.collider = new BoxCollider(12, 20);
-        this.velocity = new Vector2D(0, 9);
-        this.damage = 1;
+    public TankBullet1(){
+        this.renderer=new SingleImageRenderer("assets/images/enemy-side/cannon/0.png");
+        this.position=new Vector2D(Settings.TANK_POSITION_X+5, Settings.TANK_POSITION_Y+5);
+        this.velocity=new Vector2D(4,4);
+        this.damage=1;
+        this.collider=new BoxCollider(15,15);
     }
+
 
     @Override
     public void run() {
@@ -33,9 +35,8 @@ public class EnemyBullet extends GameObject implements Physics {
     public void destroy() {
         super.destroy();
         Explosion explosion = GameObject.recycle(Explosion.class);
-        explosion.position.set(this.position.x,this.position.y);
+        explosion.position.set(this.position);
     }
-
     @Override
     public BoxCollider getBoxCollider() {
         return this.collider;

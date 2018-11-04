@@ -4,10 +4,9 @@ import base.GameObject;
 import base.Settings;
 import base.event.KeyEventPress;
 import base.renderer.SingleImageRenderer;
-import base.scene.Scene;
 import base.scene.SceneManager;
-import base.scene.SceneStage1;
 import base.scene.SceneStage2;
+import base.scene.SceneStage3;
 import tklibs.SpriteUtils;
 
 public class BannerScene2  extends GameObject {
@@ -21,7 +20,7 @@ public class BannerScene2  extends GameObject {
     @Override
     public void run() {
         if (KeyEventPress.isEnterPress){
-            SceneManager.signNewScene(new SceneStage2());
+            SceneManager.signNewScene(new SceneStage3());
         }
     }
 }

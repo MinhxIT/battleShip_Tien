@@ -5,7 +5,7 @@ import base.Settings;
 import base.event.KeyEventPress;
 import base.renderer.SingleImageRenderer;
 import base.scene.SceneManager;
-import base.scene.SceneStage2;
+import base.scene.SceneStage3;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
@@ -20,7 +20,7 @@ public class Bannerlv3 extends GameObject {
     @Override
     public void run() {
         if (KeyEventPress.isEnterPress ){
-            //SceneManager.signNewScene(new SceneStage3());
+            SceneManager.signNewScene(new SceneStage3());
         }
     }
 }
