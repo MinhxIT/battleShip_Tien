@@ -4,8 +4,7 @@ import base.GameObject;
 import base.Settings;
 import base.event.KeyEventPress;
 import base.renderer.SingleImageRenderer;
-import base.scene.SceneManager;
-import base.scene.SceneStage1;
+import base.scene.*;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;

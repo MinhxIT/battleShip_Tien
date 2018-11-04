@@ -17,10 +17,16 @@ public abstract class Scene {
     public abstract void init();
 
     public void run() {
-        System.out.println(GameObject.playerIsDead);
+       // System.out.println(GameObject.playerIsDead);
         if (GameObject.playerIsDead) {
             if (frameCounter.run()) {
                 SceneManager.signNewScene(new GameOverScene());
+                frameCounter.reset();
+            }
+        }
+        if (GameObject.bossIsDead) {
+            if (frameCounter.run()) {
+                SceneManager.signNewScene(new GameWinScene());
                 frameCounter.reset();
             }
         }

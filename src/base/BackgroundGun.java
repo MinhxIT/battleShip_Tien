@@ -14,7 +14,7 @@ public class BackgroundGun extends GameObject {
     public boolean isEnd;
     public BackgroundGun(){
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/images/background/0.png");
+        BufferedImage image = SpriteUtils.loadImage("assets/images/background/background.png");
         this.renderer = new SingleImageRenderer(image);
         this.position = new Vector2D(0,
                 -(image.getHeight() - Settings.SCREEN_HEIGHT));

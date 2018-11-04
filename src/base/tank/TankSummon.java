@@ -38,7 +38,7 @@ public class TankSummon extends GameObject {
 
     public void taoTanks() {
                 TankType1 tankType1 = GameObject.recycle(TankType1.class);
-                tankType1.position.set(Settings.TANK_POSITION_X-20, Settings.TANK_POSITION_Y );
+                tankType1.position.set(Settings.TANK_POSITION_X-20, Settings.TANK_POSITION_Y +10 );
 
                 TankType2 tankType2 = GameObject.recycle(TankType2.class);
                 tankType2.position.set(Settings.SCREEN_WIDHT-50, Settings.TANK_POSITION_Y-100);

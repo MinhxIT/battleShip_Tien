@@ -10,9 +10,7 @@ import java.util.Random;
 public class StoneType1 extends Stone {
     public StoneType1() {
         List<String> listStones = Arrays.asList(
-                "assets/images/stone/rock6.png",
-                "assets/images/stone/rock7.png",
-                "assets/images/stone/rock8.png"
+                "assets/images/stone/rock7.png"
                 );
         Random rand = new Random();
         int randomIndex = rand.nextInt(listStones.size());

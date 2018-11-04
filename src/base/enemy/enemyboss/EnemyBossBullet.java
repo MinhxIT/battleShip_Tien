@@ -23,7 +23,7 @@ public class EnemyBossBullet extends GameObject implements Physics {
         this.renderer = new SingleImageRenderer(SpriteUtils.loadImage("assets/images/boss/0.png"));
         this.position = new Vector2D(0, 0);
         this.collider = new BoxCollider(20, 32);
-        this.velocity = new Vector2D(0, 3);
+        this.velocity = new Vector2D(0, 10);
         this.damage = 4;
     }
 

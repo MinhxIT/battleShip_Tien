@@ -18,7 +18,7 @@ public class Stone extends GameObject implements Physics {
 
     @Override
     public void run() {
-        this.position.y += 3/*speed*/;
+        this.position.y += 5/*speed*/;
         if (this.position.y > 700) {
             this.destroy();
             return;

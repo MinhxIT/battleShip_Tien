@@ -9,9 +9,9 @@ import base.renderer.SingleImageRenderer;
 public class PlayerBulletType1 extends PlayerBullet {
     public PlayerBulletType1() {
         super();
-        this.renderer = new SingleImageRenderer("assets/images/player-bullets/0.png");
+        this.renderer = new SingleImageRenderer("assets/images/enemy-bullets/2.png");
         this.collider = new BoxCollider(15, 15);
-        this.damage = 5;
+        this.damage = 1;
     }
 
     @Override

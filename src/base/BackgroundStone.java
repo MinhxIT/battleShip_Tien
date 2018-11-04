@@ -12,7 +12,7 @@ public class BackgroundStone extends GameObject {
     public boolean isEnd = false;
     public BackgroundStone() {
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/images/background/0.png");
+        BufferedImage image = SpriteUtils.loadImage("assets/images/background/background.png");
         this.renderer = new SingleImageRenderer(image);
         this.position = new Vector2D(0,
                 -(image.getHeight() - Settings.SCREEN_HEIGHT));

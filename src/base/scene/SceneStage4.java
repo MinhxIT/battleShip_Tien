@@ -4,6 +4,7 @@ import base.BackgroundBoss;
 import base.GameObject;
 import base.enemy.enemyboss.EnemyBoss;
 import base.player.Player;
+import base.scene.gamewinscene.GameWinScene;
 import base.stone.StoneSummon;
 import base.tank.TankSummon;
 
@@ -32,6 +33,10 @@ public class SceneStage4 extends Scene {
     @Override
     public void run() {
         super.run();
+//            if (frameCounter.run()) {
+//                SceneManager.signNewScene(new GameWinScene());
+//                frameCounter.reset();
+//            }
     }
 }
 

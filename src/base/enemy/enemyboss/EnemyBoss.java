@@ -37,7 +37,7 @@ public class EnemyBoss extends GameObject implements Physics {
         this.fireCounter = new FrameCounter(20);
         this.moveCounter = new FrameCounter(30);
         this.collider = new BoxCollider(110, 115);
-        this.hp = 50;
+        this.hp = 30;
         this.velocity = new Vector2D(0, 0);
 
         this.defineAction();
@@ -93,7 +93,7 @@ public class EnemyBoss extends GameObject implements Physics {
     public void fire() {
         EnemyBossBullet bullet = GameObject.recycle(EnemyBossBullet.class);
 
-        bullet.velocity.set(0, 5);
+        bullet.velocity.set(0, 2);
 
         bullet.position.set(this.position.x, this.position.y + 10);
 
@@ -106,9 +106,9 @@ public class EnemyBoss extends GameObject implements Physics {
             this.position.x = 170;
         }
         if (moveCounterRun) {
-            this.position.addThis(10, 0);
+            this.position.addThis(5, 0);
         } else {
-            this.position.addThis(-10, 0);
+            this.position.addThis(-5, 0);
         }
         if (this.position.x > 350) {
             this.moveCounter.reset();
@@ -119,6 +119,7 @@ public class EnemyBoss extends GameObject implements Physics {
     @Override
     public void destroy() {
         super.destroy();
+
         Explosion explosion = GameObject.recycle(Explosion.class);
         explosion.position.set(this.position);
 
@@ -139,7 +140,7 @@ public class EnemyBoss extends GameObject implements Physics {
         this.hp -= damage;
         if (this.hp <= 0) {
             this.destroy();
-            SceneManager.signNewScene(new GameWinScene());
+           // SceneManager.signNewScene(new GameWinScene());
         }
     }
 }

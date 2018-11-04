@@ -12,7 +12,7 @@ public class BackgroundBoss extends GameObject {
     boolean isEnd;
 
     public BackgroundBoss() {
-        BufferedImage image = SpriteUtils.loadImage("assets/images/background/0.png");
+        BufferedImage image = SpriteUtils.loadImage("assets/images/background/background.png");
         this.renderer = new SingleImageRenderer(image);
         this.position = new Vector2D(0,
                 -(image.getHeight() - Settings.SCREEN_HEIGHT));
@@ -21,15 +21,16 @@ public class BackgroundBoss extends GameObject {
 
     @Override
     public void run() {
-        if(this.position.y>0){
-            if(KeyEventPress.isAnyKeyPress){
-                SceneManager.signNewScene(new GameOverScene());
+
+            if(this.position.y>0){
+                if(KeyEventPress.isAnyKeyPress){
+                    SceneManager.signNewScene(new GameOverScene());
+                }
+                return;
             }
-            return;
-        }
-        else {
-            this.position.y += 3/*speed*/;
-        }
+            else {
+                this.position.y += 3/*speed*/;
+            }
 
 
     }

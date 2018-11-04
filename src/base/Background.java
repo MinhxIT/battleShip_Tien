@@ -17,7 +17,7 @@ public class Background extends GameObject {
 
     public Background() {
         super();
-        BufferedImage image = SpriteUtils.loadImage("assets/images/background/0.png");
+        BufferedImage image = SpriteUtils.loadImage("assets/images/background/background.png");
         //MediaPlayer mediaPlayer  = AudioUtils.playMedia("");
         this.renderer = new SingleImageRenderer(image);
         this.position = new Vector2D(0,
