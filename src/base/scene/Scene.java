@@ -6,6 +6,7 @@ import base.counter.FrameCounter;
 import base.enemy.EnemySummoner;
 import base.player.Player;
 import base.scene.gameoverscene.GameOverScene;
+import base.scene.gamewinscene.GameWinScene;
 import base.stone.StoneSummon;
 
 public abstract class Scene {
@@ -23,5 +24,8 @@ public abstract class Scene {
                 frameCounter.reset();
             }
         }
-    };
+
+    }
+
+    ;
 }

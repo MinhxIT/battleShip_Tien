@@ -10,9 +10,12 @@ import base.action.ActionWait;
 import base.counter.FrameCounter;
 import base.physics.BoxCollider;
 import base.physics.Physics;
+import base.player.DeathPlayer;
 import base.renderer.SingleImageRenderer;
 import base.scene.SceneManager;
 import base.scene.gamewinscene.GameWinScene;
+import javafx.scene.media.MediaPlayer;
+import tklibs.AudioUtils;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
@@ -118,6 +121,13 @@ public class EnemyBoss extends GameObject implements Physics {
         super.destroy();
         Explosion explosion = GameObject.recycle(Explosion.class);
         explosion.position.set(this.position);
+
+        AudioUtils.initialize();
+        MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/enemy-player-explosion-big.wav");
+        mediaPlayer.play();
+
+        DeathBoss deathBoss = GameObject.recycle(DeathBoss.class);
+        deathBoss.position.set(this.position);
     }
 
     @Override

@@ -22,7 +22,7 @@ public class Banner extends GameObject {
     @Override
     public void run() {
         if (KeyEventPress.isAnyKeyPress && KeyEventPress.isEnterPress==false){
-            SceneManager.signNewScene(new Level1Scene());
+            SceneManager.signNewScene(new Level4Scene());
         }
     }
 }

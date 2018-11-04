@@ -120,9 +120,11 @@ public class Player extends GameObject implements Physics {
 
         Explosion explosion = GameObject.recycle(Explosion.class);
         explosion.position.set(this.position);
+
         AudioUtils.initialize();
         MediaPlayer mediaPlayer = AudioUtils.playMedia("assets/Sound/enemy-player-explosion-big.wav");
         mediaPlayer.play();
+
         DeathPlayer deathPlayer = GameObject.recycle(DeathPlayer.class);
         deathPlayer.position.set(this.position);
     }
